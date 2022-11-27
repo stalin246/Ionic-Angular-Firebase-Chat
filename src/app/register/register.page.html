@@ -1,10 +1,26 @@
+
+<style>
+  .contenido{
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  top: 50px;
+  width: 300px;
+}
+
+</style>
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Register</ion-title>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content color="secondary" class="ion-padding">
+<div class="contenido">
   <form class="form" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
 
     <ion-item>
@@ -33,10 +49,12 @@
       </ng-container>
     </div>
 
-
+    <hr>
     <ion-button class="submit-btn" type="submit" [disabled]="!validations_form.valid">Resgistro</ion-button>
     <label class="error-message">{{errorMessage}}</label>
     <label class="success-message">{{successMessage}}</label>
   </form>
-  <p class="go-to-login">Already have an account? <a (click)="goLoginPage()">Prueba iniciar sesión</a></p>
+  <p class="go-to-login">Ya tienes una cuenta? <a (click)="goLoginPage()">Prueba iniciar sesión</a></p>
+</div>
 </ion-content>
+

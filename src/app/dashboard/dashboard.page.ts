@@ -4,7 +4,12 @@ import { NavController, ActionSheetController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authentication.service';
 import { FirebaseService } from '../services/firebase.service'
 import firebase from 'firebase';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx'
+
+
+import { Camera } from '@ionic-native/camera/ngx';
+import { CameraOptions } from '@ionic-native/camera/ngx';
+
+
 import * as crypto from 'crypto-js';
 
 

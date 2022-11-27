@@ -1,10 +1,40 @@
+<style>
+  .contenido{
+  height: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  top: 50px;
+  width: 300px;
+  
+}
+div.avatar {
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 200px;
+    width: 200px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+    background-color: white;
+}
+</style>
+
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Inicio de sesión</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" color="secondary">
+<div class="contenido">
+  <div class="avatar" style="background-image: url(  https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ionic_Logo.svg/1280px-Ionic_Logo.svg.png
+  )"></div>
+  <hr>
   <form class="form" [formGroup]="validations_form" (ngSubmit)="loginUser(validations_form.value)">
 
     <ion-item>
@@ -33,12 +63,13 @@
       </ng-container>
     </div>
 
-
+    <hr>
     <ion-button class="submit-btn" type="submit" [disabled]="!validations_form.valid">Iniciar sesión</ion-button>
 
     <label class="error-message">{{errorMessage}}</label>
   </form>
   <p class="go-to-register">
-    ¿no tienes cuenta aún? <a (click)="goToRegisterPage()">Crea una cuenta ahora</a>
+    ¿No tienes cuenta aún? <a (click)="goToRegisterPage()">Crea una cuenta ahora</a>
   </p>
+</div>
 </ion-content>
